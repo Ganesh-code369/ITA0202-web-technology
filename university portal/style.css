@@ -1,0 +1,1052 @@
+/* style.css */
+
+/* =========================================================
+   RESPONSIVE UNIVERSITY EVENT REGISTRATION PORTAL
+   ========================================================= */
+
+
+/* =========================================================
+   1. GLOBAL RESET & BASE STYLES
+   ========================================================= */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    min-width: 320px;
+    overflow-x: hidden;
+
+    font-family:
+        Inter,
+        "Segoe UI",
+        Roboto,
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    line-height: 1.6;
+    color: #17202a;
+    background: #f7f9fc;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+button,
+input,
+select {
+    font: inherit;
+}
+
+button {
+    cursor: pointer;
+}
+
+
+/* =========================================================
+   2. HEADER & NAVIGATION
+   ========================================================= */
+
+.site-header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.navbar {
+    width: 100%;
+    min-height: 76px;
+
+    padding: 12px 6%;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+
+    background: rgba(255, 255, 255, 0.97);
+
+    border-bottom: 1px solid #e6e9ed;
+
+    box-shadow:
+        0 3px 18px rgba(16, 24, 40, 0.08);
+
+    backdrop-filter: blur(10px);
+}
+
+.brand {
+    display: flex;
+    flex-direction: column;
+    flex-shrink: 0;
+}
+
+.university-name {
+    color: #198754;
+
+    font-size: 0.72rem;
+    font-weight: 800;
+
+    letter-spacing: 1.6px;
+}
+
+.portal-name {
+    color: #17202a;
+
+    font-size: 1.22rem;
+    font-weight: 800;
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+
+    gap: 26px;
+
+    list-style: none;
+}
+
+.nav-links a {
+    position: relative;
+
+    color: #344054;
+
+    font-size: 0.92rem;
+    font-weight: 700;
+
+    transition:
+        color 0.25s ease,
+        transform 0.25s ease;
+}
+
+.nav-links a::after {
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+    bottom: -5px;
+
+    width: 0;
+    height: 2px;
+
+    background: #198754;
+
+    transition: width 0.25s ease;
+}
+
+.nav-links a:hover,
+.nav-links a:focus {
+    color: #198754;
+    transform: translateY(-2px);
+}
+
+.nav-links a:hover::after,
+.nav-links a:focus::after {
+    width: 100%;
+}
+
+
+/* =========================================================
+   3. HERO SECTION
+   ========================================================= */
+
+.hero {
+    position: relative;
+
+    min-height: 510px;
+
+    padding:
+        90px
+        6%;
+
+    display: flex;
+    align-items: center;
+
+    overflow: hidden;
+
+    color: #ffffff;
+
+    background:
+        linear-gradient(
+            120deg,
+            #0d4d34 0%,
+            #146c43 50%,
+            #198754 100%
+        );
+}
+
+.hero::before {
+    content: "";
+
+    position: absolute;
+
+    width: 480px;
+    height: 480px;
+
+    right: -180px;
+    top: -170px;
+
+    border: 80px solid rgba(255, 255, 255, 0.06);
+
+    border-radius: 50%;
+}
+
+.hero::after {
+    content: "";
+
+    position: absolute;
+
+    width: 250px;
+    height: 250px;
+
+    left: -130px;
+    bottom: -140px;
+
+    border: 55px solid rgba(255, 255, 255, 0.05);
+
+    border-radius: 50%;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+
+    width: 100%;
+    max-width: 850px;
+}
+
+.eyebrow {
+    margin-bottom: 9px;
+
+    font-size: 0.76rem;
+    font-weight: 800;
+
+    letter-spacing: 2px;
+}
+
+.hero h1 {
+    max-width: 760px;
+
+    font-size:
+        clamp(
+            2.4rem,
+            6vw,
+            4.6rem
+        );
+
+    line-height: 1.05;
+
+    letter-spacing: -1.5px;
+
+    text-shadow:
+        1px 2px 5px rgba(0, 0, 0, 0.18);
+}
+
+.hero h1 span {
+    color: #d8f3dc;
+}
+
+.hero-description {
+    max-width: 680px;
+
+    margin: 26px 0 18px;
+
+    color: rgba(255, 255, 255, 0.94);
+
+    font-size: 1.08rem;
+}
+
+.campaign {
+    margin-bottom: 28px;
+
+    color: rgba(255, 255, 255, 0.92);
+}
+
+.campaign strong {
+    color: #ffffff;
+}
+
+.cta-button {
+    display: inline-block;
+
+    padding: 13px 25px;
+
+    border-radius: 8px;
+
+    background: #ffffff;
+    color: #146c43;
+
+    font-weight: 800;
+
+    box-shadow:
+        0 8px 20px rgba(0, 0, 0, 0.12);
+
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+.cta-button:hover,
+.cta-button:focus {
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 13px 28px rgba(0, 0, 0, 0.22);
+}
+
+
+/* =========================================================
+   4. EVENT SECTION
+   ========================================================= */
+
+.events-section {
+    width: 100%;
+    max-width: 1250px;
+
+    margin: 0 auto;
+
+    padding:
+        80px 5%;
+}
+
+.section-heading {
+    margin-bottom: 40px;
+}
+
+.section-heading h2,
+.form-intro h2 {
+    margin-bottom: 8px;
+
+    color: #17202a;
+
+    font-size:
+        clamp(
+            2rem,
+            4vw,
+            3rem
+        );
+
+    line-height: 1.15;
+}
+
+.section-heading > p:last-child {
+    color: #667085;
+}
+
+
+/* =========================================================
+   5. EVENT GRID
+   ========================================================= */
+
+.event-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, minmax(0, 1fr));
+
+    gap: 22px;
+}
+
+
+/* =========================================================
+   6. EVENT CARD
+   ========================================================= */
+
+.event-card {
+    position: relative;
+
+    width: 100%;
+
+    /* Box Model */
+    padding: 28px 22px;
+
+    border: 1px solid #dfe5eb;
+
+    margin: 0;
+
+    border-radius: 16px;
+
+    background: #ffffff;
+
+    box-shadow:
+        0 8px 25px rgba(16, 24, 40, 0.08);
+
+    overflow: hidden;
+
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+.event-card:hover {
+    transform: translateY(-7px);
+
+    box-shadow:
+        0 16px 36px rgba(16, 24, 40, 0.14);
+}
+
+.event-card::before {
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 4px;
+
+    background:
+        linear-gradient(
+            90deg,
+            #198754,
+            #75c69b
+        );
+}
+
+.event-icon {
+    width: 55px;
+    height: 55px;
+
+    margin-bottom: 20px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 12px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #e8f5e9,
+            #d8f3dc
+        );
+
+    font-size: 1.65rem;
+}
+
+.category {
+    margin-bottom: 5px;
+
+    color: #198754;
+
+    font-size: 0.7rem;
+    font-weight: 800;
+
+    letter-spacing: 1.5px;
+}
+
+.event-card h3 {
+    min-height: 52px;
+
+    margin-bottom: 18px;
+
+    color: #17202a;
+
+    font-size: 1.18rem;
+
+    line-height: 1.3;
+}
+
+.event-details {
+    margin-bottom: 16px;
+    padding: 14px 0;
+
+    border-top: 1px solid #edf0f2;
+    border-bottom: 1px solid #edf0f2;
+}
+
+.event-details p {
+    margin-bottom: 5px;
+
+    color: #475467;
+
+    font-size: 0.84rem;
+}
+
+.event-details p:last-child {
+    margin-bottom: 0;
+}
+
+.description {
+    min-height: 88px;
+
+    margin-bottom: 20px;
+
+    color: #667085;
+
+    font-size: 0.87rem;
+}
+
+.status-badge {
+    position: absolute;
+
+    top: 18px;
+    right: 18px;
+
+    z-index: 2;
+
+    padding: 4px 9px;
+
+    border-radius: 50px;
+
+    background: #d1fae5;
+    color: #065f46;
+
+    font-size: 0.66rem;
+    font-weight: 800;
+
+    white-space: nowrap;
+}
+
+.status-badge.limited {
+    background: #fff3cd;
+    color: #856404;
+}
+
+.register-btn {
+    width: 100%;
+
+    padding: 11px;
+
+    border: 1px solid #198754;
+
+    border-radius: 8px;
+
+    background: transparent;
+    color: #198754;
+
+    font-weight: 700;
+
+    transition:
+        background-color 0.25s ease,
+        color 0.25s ease,
+        transform 0.25s ease;
+}
+
+.register-btn:hover,
+.register-btn:focus {
+    background: #198754;
+    color: #ffffff;
+
+    transform: translateY(-2px);
+}
+
+
+/* =========================================================
+   7. REGISTRATION SECTION
+   ========================================================= */
+
+.registration-section {
+    padding: 80px 5%;
+
+    background:
+        linear-gradient(
+            135deg,
+            #eef7f1,
+            #f7fbf8
+        );
+}
+
+.form-container {
+    width: 100%;
+    max-width: 1000px;
+
+    margin: 0 auto;
+
+    padding: 45px;
+
+    border: 1px solid #e2e8e4;
+
+    border-radius: 20px;
+
+    background: #ffffff;
+
+    box-shadow:
+        0 10px 35px rgba(16, 24, 40, 0.08);
+}
+
+.form-intro {
+    margin-bottom: 30px;
+}
+
+.form-intro p:last-child {
+    color: #667085;
+}
+
+.registration-form {
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, minmax(0, 1fr));
+
+    gap: 22px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+
+    gap: 7px;
+}
+
+.form-group label {
+    color: #344054;
+
+    font-size: 0.9rem;
+    font-weight: 700;
+}
+
+.form-group input,
+.form-group select {
+    width: 100%;
+    min-height: 46px;
+
+    padding: 10px 13px;
+
+    border: 1px solid #cfd6dd;
+
+    border-radius: 8px;
+
+    outline: none;
+
+    background: #ffffff;
+    color: #17202a;
+
+    transition:
+        border-color 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+
+/* Attribute Selector */
+input[type="email"] {
+    background-color: #ffffff;
+}
+
+
+/* Pseudo-class */
+.form-group input:focus,
+.form-group select:focus {
+    border-color: #198754;
+
+    box-shadow:
+        0 0 0 3px rgba(25, 135, 84, 0.14);
+}
+
+.form-group input::placeholder {
+    color: #98a2b3;
+}
+
+.full-width {
+    grid-column: 1 / -1;
+}
+
+.form-note {
+    margin-top: -5px;
+}
+
+.submit-button {
+    min-height: 48px;
+
+    border: none;
+
+    border-radius: 8px;
+
+    background: #198754;
+    color: #ffffff;
+
+    font-weight: 800;
+
+    transition:
+        background-color 0.25s ease,
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+.submit-button:hover,
+.submit-button:focus {
+    background: #146c43;
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 8px 18px rgba(20, 108, 67, 0.22);
+}
+
+.success-message {
+    display: none;
+
+    padding: 12px 15px;
+
+    border-radius: 8px;
+
+    background: #d1fae5;
+    color: #065f46;
+
+    font-size: 0.9rem;
+    font-weight: 700;
+}
+
+.success-message.show {
+    display: block;
+}
+
+
+/* =========================================================
+   8. FIXED HELP BUTTON
+   ========================================================= */
+
+.help-button {
+    position: fixed;
+
+    right: 22px;
+    bottom: 22px;
+
+    z-index: 1100;
+
+    width: 48px;
+    height: 48px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: #198754;
+    color: #ffffff;
+
+    font-size: 1.2rem;
+    font-weight: 800;
+
+    box-shadow:
+        0 8px 20px rgba(0, 0, 0, 0.2);
+
+    transition:
+        transform 0.25s ease,
+        background-color 0.25s ease;
+}
+
+.help-button:hover,
+.help-button:focus {
+    background: #146c43;
+
+    transform: scale(1.1);
+}
+
+
+/* =========================================================
+   9. FOOTER
+   ========================================================= */
+
+footer {
+    padding: 55px 5% 20px;
+
+    background: #102a20;
+    color: #ffffff;
+}
+
+.footer-content {
+    width: 100%;
+    max-width: 1200px;
+
+    margin: 0 auto;
+
+    display: grid;
+
+    grid-template-columns:
+        2fr 1fr 1fr;
+
+    gap: 40px;
+}
+
+.footer-column h3 {
+    margin-bottom: 10px;
+
+    font-size: 1.05rem;
+}
+
+.footer-column p,
+.footer-column li {
+    margin-bottom: 7px;
+
+    color: #c9d7d0;
+
+    font-size: 0.88rem;
+}
+
+.footer-column ul {
+    list-style: none;
+}
+
+.footer-column a {
+    transition: color 0.2s ease;
+}
+
+.footer-column a:hover,
+.footer-column a:focus {
+    color: #ffffff;
+
+    text-decoration: underline;
+}
+
+.copyright {
+    width: 100%;
+    max-width: 1200px;
+
+    margin: 35px auto 0;
+
+    padding-top: 18px;
+
+    border-top:
+        1px solid rgba(255, 255, 255, 0.15);
+
+    color: #aebeb6;
+
+    text-align: center;
+
+    font-size: 0.8rem;
+}
+
+
+/* =========================================================
+   10. RESPONSIVE DESIGN - TABLET
+   ========================================================= */
+
+@media (max-width: 1100px) {
+
+    .event-grid {
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+    }
+
+    .navbar {
+        padding-left: 4%;
+        padding-right: 4%;
+    }
+}
+
+
+/* =========================================================
+   11. RESPONSIVE DESIGN - MOBILE
+   ========================================================= */
+
+@media (max-width: 700px) {
+
+    .navbar {
+        min-height: auto;
+
+        padding: 14px 5%;
+
+        flex-direction: column;
+
+        align-items: flex-start;
+
+        gap: 12px;
+    }
+
+    .nav-links {
+        width: 100%;
+
+        gap: 13px 18px;
+
+        flex-wrap: wrap;
+    }
+
+    .nav-links a {
+        font-size: 0.84rem;
+    }
+
+    .hero {
+        min-height: 460px;
+
+        padding:
+            65px 6%;
+    }
+
+    .hero h1 {
+        font-size: 2.65rem;
+
+        letter-spacing: -0.8px;
+    }
+
+    .hero-description {
+        font-size: 0.96rem;
+    }
+
+    .events-section {
+        padding:
+            65px 5%;
+    }
+
+    .event-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .event-card h3 {
+        min-height: auto;
+    }
+
+    .description {
+        min-height: auto;
+    }
+
+    .registration-section {
+        padding:
+            65px 5%;
+    }
+
+    .form-container {
+        padding: 30px 20px;
+    }
+
+    .registration-form {
+        grid-template-columns: 1fr;
+    }
+
+    .full-width {
+        grid-column: auto;
+    }
+
+    .footer-content {
+        grid-template-columns: 1fr;
+
+        gap: 25px;
+    }
+}
+
+
+/* =========================================================
+   12. RESPONSIVE DESIGN - 375PX MOBILE
+   ========================================================= */
+
+@media (max-width: 375px) {
+
+    .portal-name {
+        font-size: 1.05rem;
+    }
+
+    .nav-links {
+        gap: 10px 14px;
+    }
+
+    .nav-links a {
+        font-size: 0.78rem;
+    }
+
+    .hero {
+        padding:
+            55px 5%;
+    }
+
+    .hero h1 {
+        font-size: 2.15rem;
+    }
+
+    .hero-description {
+        font-size: 0.9rem;
+    }
+
+    .campaign {
+        font-size: 0.86rem;
+    }
+
+    .cta-button {
+        width: 100%;
+
+        text-align: center;
+    }
+
+    .events-section,
+    .registration-section {
+        padding-left: 5%;
+        padding-right: 5%;
+    }
+
+    .event-card {
+        padding:
+            24px 18px;
+    }
+
+    .form-container {
+        padding:
+            25px 17px;
+    }
+
+    .help-button {
+        right: 14px;
+        bottom: 14px;
+    }
+}
+
+
+/* =========================================================
+   13. ACCESSIBILITY
+   ========================================================= */
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible {
+    outline: 3px solid rgba(25, 135, 84, 0.35);
+
+    outline-offset: 3px;
+}
+
+
+/* =========================================================
+   14. REDUCED MOTION
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    html {
+        scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+        transition: none !important;
+        animation: none !important;
+    }
+}
+
+
+/* =========================================================
+   BOX MODEL DEMONSTRATION
+
+   Default content-box calculation:
+
+   Content width = 250px
+   Left padding = 22px
+   Right padding = 22px
+   Left border = 1px
+   Right border = 1px
+   Left margin = 0px
+   Right margin = 0px
+
+   Total width =
+   250 + 22 + 22 + 1 + 1 + 0 + 0
+   = 296px
+
+   With border-box:
+   Declared width = complete outer width.
+   ========================================================= */
