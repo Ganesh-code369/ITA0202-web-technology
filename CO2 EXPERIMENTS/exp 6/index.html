@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>To-Do List</title>
+
+    <style>
+        body {
+            font-family: Arial;
+            background: #f2f2f2;
+        }
+
+        .container {
+            width: 400px;
+            margin: 50px auto;
+            background: white;
+            padding: 25px;
+            border-radius: 10px;
+        }
+
+        h2 {
+            text-align: center;
+        }
+
+        input {
+            width: 65%;
+            padding: 10px;
+        }
+
+        button {
+            padding: 10px;
+            border: none;
+            cursor: pointer;
+        }
+
+        .add-btn {
+            background: blue;
+            color: white;
+        }
+
+        li {
+            list-style: none;
+            background: #eee;
+            padding: 10px;
+            margin-top: 10px;
+        }
+
+        .edit {
+            background: orange;
+            color: white;
+            float: right;
+            margin-left: 5px;
+        }
+
+        .delete {
+            background: red;
+            color: white;
+            float: right;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <h2>My To-Do List</h2>
+
+    <input type="text" id="taskInput" placeholder="Enter a task">
+
+    <button class="add-btn" onclick="addTask()">Add</button>
+
+    <ul id="taskList"></ul>
+
+</div>
+
+<script>
+
+    let tasks = [];
+
+    function addTask() {
+
+        let input = document.getElementById("taskInput");
+        let taskText = input.value;
+
+        if (taskText === "") {
+            alert("Please enter a task");
+            return;
+        }
+
+        let task = {
+            name: taskText
+        };
+
+        tasks.push(task);
+
+        displayTasks();
+
+        input.value = "";
+    }
+
+    function displayTasks() {
+
+        let list = document.getElementById("taskList");
+
+        list.innerHTML = "";
+
+        for (let i = 0; i < tasks.length; i++) {
+
+            list.innerHTML += `
+                <li>
+                    ${tasks[i].name}
+
+                    <button class="delete" onclick="deleteTask(${i})">
+                        Delete
+                    </button>
+
+                    <button class="edit" onclick="editTask(${i})">
+                        Edit
+                    </button>
+                </li>
+            `;
+        }
+    }
+
+    function deleteTask(index) {
+
+        tasks.splice(index, 1);
+
+        displayTasks();
+    }
+
+    function editTask(index) {
+
+        let newTask = prompt(
+            "Edit your task:",
+            tasks[index].name
+        );
+
+        if (newTask !== null && newTask !== "") {
+
+            tasks[index].name = newTask;
+
+            displayTasks();
+        }
+    }
+
+</script>
+
+</body>
+</html>

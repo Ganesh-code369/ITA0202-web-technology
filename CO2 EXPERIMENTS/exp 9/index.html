@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Shopping Cart and Billing System</title>
+
+    <style>
+        body {
+            font-family: Arial;
+            background: #f2f2f2;
+        }
+
+        .container {
+            width: 600px;
+            margin: 50px auto;
+            background: white;
+            padding: 25px;
+            border-radius: 10px;
+            text-align: center;
+        }
+
+        select, input {
+            padding: 10px;
+            margin: 10px;
+        }
+
+        button {
+            padding: 10px 20px;
+            background: blue;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        th, td {
+            border: 1px solid black;
+            padding: 10px;
+        }
+
+        #bill {
+            margin-top: 20px;
+            font-size: 18px;
+            text-align: left;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <h2>Product Shopping Cart</h2>
+
+    <select id="product">
+        <option value="Laptop">Laptop - ₹50000</option>
+        <option value="Mobile">Mobile - ₹20000</option>
+        <option value="Headphones">Headphones - ₹2000</option>
+    </select>
+
+    <input type="number" id="quantity" placeholder="Quantity" min="1">
+
+    <button onclick="addToCart()">Add to Cart</button>
+
+    <table>
+
+        <tr>
+            <th>Product</th>
+            <th>Price</th>
+            <th>Quantity</th>
+            <th>Total</th>
+        </tr>
+
+        <tbody id="cart"></tbody>
+
+    </table>
+
+    <button onclick="calculateBill()">Generate Bill</button>
+
+    <div id="bill"></div>
+
+</div>
+
+<script>
+
+    let products = {
+        Laptop: 50000,
+        Mobile: 20000,
+        Headphones: 2000
+    };
+
+    let cart = [];
+
+    function addToCart() {
+
+        let productName =
+            document.getElementById("product").value;
+
+        let quantity =
+            Number(document.getElementById("quantity").value);
+
+        if (quantity <= 0) {
+            alert("Please enter a valid quantity");
+            return;
+        }
+
+        let product = {
+            name: productName,
+            price: products[productName],
+            quantity: quantity
+        };
+
+        cart.push(product);
+
+        displayCart();
+
+        document.getElementById("quantity").value = "";
+    }
+
+
+    function displayCart() {
+
+        let cartTable =
+            document.getElementById("cart");
+
+        cartTable.innerHTML = "";
+
+        for (let i = 0; i < cart.length; i++) {
+
+            let total =
+                cart[i].price * cart[i].quantity;
+
+            cartTable.innerHTML += `
+                <tr>
+                    <td>${cart[i].name}</td>
+                    <td>₹${cart[i].price}</td>
+                    <td>${cart[i].quantity}</td>
+                    <td>₹${total}</td>
+                </tr>
+            `;
+        }
+    }
+
+
+    function calculateBill() {
+
+        let subtotal = 0;
+
+        for (let i = 0; i < cart.length; i++) {
+
+            subtotal +=
+                cart[i].price * cart[i].quantity;
+        }
+
+        let discount = 0;
+
+        if (subtotal >= 50000) {
+            discount = subtotal * 0.10;
+        }
+
+        let amountAfterDiscount =
+            subtotal - discount;
+
+        let tax =
+            amountAfterDiscount * 0.05;
+
+        let finalTotal =
+            amountAfterDiscount + tax;
+
+        document.getElementById("bill").innerHTML =
+            "<b>Subtotal:</b> ₹" + subtotal + "<br>" +
+            "<b>Discount (10%):</b> ₹" + discount + "<br>" +
+            "<b>Tax (5%):</b> ₹" + tax + "<br>" +
+            "<h3>Final Total: ₹" +
+            finalTotal.toFixed(2) + "</h3>";
+    }
+
+</script>
+
+</body>
+</html>

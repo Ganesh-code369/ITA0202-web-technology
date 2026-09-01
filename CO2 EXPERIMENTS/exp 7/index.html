@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Online Quiz Application</title>
+
+    <style>
+        body {
+            font-family: Arial;
+            background: #f2f2f2;
+        }
+
+        .container {
+            width: 600px;
+            margin: 50px auto;
+            background: white;
+            padding: 25px;
+            border-radius: 10px;
+        }
+
+        h2 {
+            text-align: center;
+        }
+
+        .question {
+            background: #f5f5f5;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 8px;
+        }
+
+        button {
+            width: 100%;
+            padding: 12px;
+            background: blue;
+            color: white;
+            border: none;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+
+        #result {
+            text-align: center;
+            font-size: 20px;
+            font-weight: bold;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <h2>Online Quiz</h2>
+
+    <div id="quiz"></div>
+
+    <button onclick="calculateScore()">Submit Quiz</button>
+
+    <p id="result"></p>
+
+</div>
+
+<script>
+
+    let questions = [
+        {
+            question: "1. What does HTML stand for?",
+            options: [
+                "Hyper Text Markup Language",
+                "High Text Machine Language",
+                "Home Tool Markup Language"
+            ],
+            answer: "Hyper Text Markup Language"
+        },
+
+        {
+            question: "2. Which language is used for styling?",
+            options: [
+                "HTML",
+                "CSS",
+                "Java"
+            ],
+            answer: "CSS"
+        },
+
+        {
+            question: "3. Which language is used for interactivity?",
+            options: [
+                "Python",
+                "JavaScript",
+                "C++"
+            ],
+            answer: "JavaScript"
+        }
+    ];
+
+    function displayQuiz() {
+
+        let quiz = document.getElementById("quiz");
+
+        for (let i = 0; i < questions.length; i++) {
+
+            let questionHTML = `
+                <div class="question">
+                    <p><b>${questions[i].question}</b></p>
+            `;
+
+            for (let j = 0; j < questions[i].options.length; j++) {
+
+                questionHTML += `
+                    <input type="radio"
+                           name="question${i}"
+                           value="${questions[i].options[j]}">
+
+                    ${questions[i].options[j]}<br>
+                `;
+            }
+
+            questionHTML += `</div>`;
+
+            quiz.innerHTML += questionHTML;
+        }
+    }
+
+    function calculateScore() {
+
+        let score = 0;
+
+        for (let i = 0; i < questions.length; i++) {
+
+            let selectedAnswer =
+                document.querySelector(
+                    `input[name="question${i}"]:checked`
+                );
+
+            if (
+                selectedAnswer &&
+                selectedAnswer.value === questions[i].answer
+            ) {
+                score++;
+            }
+        }
+
+        document.getElementById("result").innerHTML =
+            "Your Score: " + score + " / " + questions.length;
+    }
+
+    displayQuiz();
+
+</script>
+
+</body>
+</html>

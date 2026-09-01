@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Student Result Analysis</title>
+
+    <style>
+        body {
+            font-family: Arial;
+            background: #f2f2f2;
+        }
+
+        .container {
+            width: 700px;
+            margin: 50px auto;
+            background: white;
+            padding: 25px;
+            border-radius: 10px;
+            text-align: center;
+        }
+
+        input {
+            padding: 10px;
+            margin: 5px;
+            width: 100px;
+        }
+
+        button {
+            padding: 10px 20px;
+            background: blue;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        table {
+            width: 100%;
+            margin-top: 20px;
+            border-collapse: collapse;
+        }
+
+        th, td {
+            border: 1px solid black;
+            padding: 10px;
+        }
+
+        th {
+            background: #ddd;
+        }
+
+        #result {
+            margin-top: 20px;
+            font-size: 18px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h2>Student Result Analysis System</h2>
+
+        <input type="number" id="mark1" placeholder="Mark 1">
+        <input type="number" id="mark2" placeholder="Mark 2">
+        <input type="number" id="mark3" placeholder="Mark 3">
+
+        <br><br>
+
+        <button onclick="analyzeResult()">Analyze Result</button>
+
+        <table>
+            <tr>
+                <th>Subject</th>
+                <th>Marks</th>
+            </tr>
+
+            <tr>
+                <td>Subject 1</td>
+                <td id="m1">-</td>
+            </tr>
+
+            <tr>
+                <td>Subject 2</td>
+                <td id="m2">-</td>
+            </tr>
+
+            <tr>
+                <td>Subject 3</td>
+                <td id="m3">-</td>
+            </tr>
+        </table>
+
+        <div id="result"></div>
+
+    </div>
+
+    <script>
+
+        function analyzeResult() {
+
+            let marks = [
+                Number(document.getElementById("mark1").value),
+                Number(document.getElementById("mark2").value),
+                Number(document.getElementById("mark3").value)
+            ];
+
+            document.getElementById("m1").innerHTML = marks[0];
+            document.getElementById("m2").innerHTML = marks[1];
+            document.getElementById("m3").innerHTML = marks[2];
+
+            let student = {
+                name: "Ganesh",
+                marks: marks
+            };
+
+            let total = 0;
+
+            for (let i = 0; i < marks.length; i++) {
+                total += marks[i];
+            }
+
+            let average = total / marks.length;
+
+            let highest = Math.max(...marks);
+            let lowest = Math.min(...marks);
+
+            let status;
+
+            if (average >= 50) {
+                status = "PASS";
+            } else {
+                status = "FAIL";
+            }
+
+            document.getElementById("result").innerHTML =
+                "<b>Student:</b> " + student.name + "<br>" +
+                "<b>Total:</b> " + total + "<br>" +
+                "<b>Average:</b> " + average.toFixed(2) + "<br>" +
+                "<b>Highest Mark:</b> " + highest + "<br>" +
+                "<b>Lowest Mark:</b> " + lowest + "<br>" +
+                "<b>Result:</b> " + status;
+        }
+
+    </script>
+
+</body>
+</html>
