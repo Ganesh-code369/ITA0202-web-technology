@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Event Registration</title>
+
+    <style>
+        body {
+            font-family: Arial;
+            background: #f2f2f2;
+            text-align: center;
+        }
+
+        .container {
+            width: 450px;
+            margin: 50px auto;
+            background: white;
+            padding: 25px;
+            border-radius: 10px;
+        }
+
+        input, select {
+            width: 90%;
+            padding: 10px;
+            margin: 10px;
+        }
+
+        button {
+            padding: 10px 20px;
+            background: blue;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        #message {
+            font-weight: bold;
+            margin-top: 15px;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <h2>Event Registration</h2>
+
+    <form id="eventForm">
+
+        <input type="text" id="name"
+               placeholder="Enter your name">
+
+        <br>
+
+        <input type="email" id="email"
+               placeholder="Enter your email">
+
+        <br>
+
+        <select id="event">
+            <option value="">Select Event</option>
+            <option>Hackathon</option>
+            <option>Workshop</option>
+            <option>Technical Symposium</option>
+        </select>
+
+        <br>
+
+        <!-- Intrinsic Event Handling -->
+        <button type="button" onclick="showAlert()">
+            Check Event
+        </button>
+
+        <br><br>
+
+        <button type="submit">
+            Register
+        </button>
+
+    </form>
+
+    <p id="message"></p>
+
+</div>
+
+<script>
+
+    // Intrinsic event handling using onclick
+    function showAlert() {
+        alert("You clicked the Check Event button!");
+    }
+
+
+    let nameInput = document.getElementById("name");
+    let emailInput = document.getElementById("email");
+    let eventSelect = document.getElementById("event");
+    let form = document.getElementById("eventForm");
+    let message = document.getElementById("message");
+
+
+    // input event
+    nameInput.addEventListener("input", function() {
+        message.textContent = "Typing: " + nameInput.value;
+    });
+
+
+    // focus event
+    nameInput.addEventListener("focus", function() {
+        nameInput.style.backgroundColor = "lightyellow";
+    });
+
+
+    // blur event
+    nameInput.addEventListener("blur", function() {
+        nameInput.style.backgroundColor = "white";
+    });
+
+
+    // change event
+    eventSelect.addEventListener("change", function() {
+        message.textContent =
+            "Selected Event: " + eventSelect.value;
+    });
+
+
+    // mouseover event
+    eventSelect.addEventListener("mouseover", function() {
+        eventSelect.style.backgroundColor = "lightblue";
+    });
+
+
+    // mouseout event
+    eventSelect.addEventListener("mouseout", function() {
+        eventSelect.style.backgroundColor = "white";
+    });
+
+
+    // submit event
+    form.addEventListener("submit", function(event) {
+
+        event.preventDefault();
+
+        if (
+            nameInput.value === "" ||
+            emailInput.value === "" ||
+            eventSelect.value === ""
+        ) {
+
+            message.textContent =
+                "Please fill all the details!";
+
+        } else {
+
+            message.textContent =
+                "Registration Successful for " +
+                eventSelect.value + "!";
+
+        }
+
+    });
+
+</script>
+
+</body>
+</html>

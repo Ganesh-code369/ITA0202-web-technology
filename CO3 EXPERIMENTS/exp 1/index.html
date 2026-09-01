@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Student Profile DOM</title>
+
+    <style>
+        body {
+            font-family: Arial;
+            text-align: center;
+            background-color: #f2f2f2;
+            padding: 30px;
+        }
+
+        .profile {
+            width: 400px;
+            margin: auto;
+            padding: 20px;
+            background-color: white;
+            border-radius: 10px;
+        }
+
+        .highlight {
+            border: 3px solid blue;
+        }
+
+        button {
+            padding: 10px;
+            margin: 5px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1 id="heading">Student Profile</h1>
+
+    <div class="profile" id="profile">
+
+        <h2 id="name">Ganesh</h2>
+
+        <p class="details">Register Number: 123456</p>
+
+        <p class="details">Department: CSE</p>
+
+        <p class="details">Year: 2nd Year</p>
+
+        <img id="studentImage"
+             src="student.jpg"
+             alt="Student Image"
+             width="150">
+
+    </div>
+
+    <br>
+
+    <button onclick="changeHeading()">
+        Change Heading
+    </button>
+
+    <button onclick="changeTextColor()">
+        Change Text Colour
+    </button>
+
+    <button onclick="changeBackground()">
+        Change Background
+    </button>
+
+    <button onclick="toggleProfile()">
+        Show / Hide Profile
+    </button>
+
+    <button onclick="changeImage()">
+        Change Image Attribute
+    </button>
+
+    <script>
+
+        function changeHeading() {
+
+            document.getElementById("heading").textContent =
+                "My Student Details";
+
+        }
+
+
+        function changeTextColor() {
+
+            document.querySelector(".details").style.color =
+                "blue";
+
+        }
+
+
+        function changeBackground() {
+
+            document.getElementById("profile").style.backgroundColor =
+                "lightyellow";
+
+            document.getElementById("profile").classList.add(
+                "highlight"
+            );
+
+        }
+
+
+        function toggleProfile() {
+
+            let profile =
+                document.getElementById("profile");
+
+            if (profile.style.display === "none") {
+
+                profile.style.display = "block";
+
+            } else {
+
+                profile.style.display = "none";
+
+            }
+
+        }
+
+
+        function changeImage() {
+
+            document.getElementById("studentImage")
+                .setAttribute(
+                    "alt",
+                    "Updated Student Profile Image"
+                );
+
+            alert("Image alt attribute changed!");
+
+        }
+
+    </script>
+
+</body>
+</html>

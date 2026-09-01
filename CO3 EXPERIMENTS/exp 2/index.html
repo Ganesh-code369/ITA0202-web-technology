@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Dynamic Student Registration</title>
+
+    <style>
+        body {
+            font-family: Arial;
+            background: #f2f2f2;
+            text-align: center;
+        }
+
+        .container {
+            width: 500px;
+            margin: 50px auto;
+            background: white;
+            padding: 25px;
+            border-radius: 10px;
+        }
+
+        input, select {
+            width: 90%;
+            padding: 10px;
+            margin: 8px;
+        }
+
+        button {
+            padding: 10px 15px;
+            margin: 5px;
+            border: none;
+            cursor: pointer;
+            background: blue;
+            color: white;
+        }
+
+        li {
+            list-style: none;
+            background: #eee;
+            margin: 10px;
+            padding: 12px;
+            text-align: left;
+        }
+
+        .remove {
+            float: right;
+            background: red;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h2>Student Registration List</h2>
+
+        <input type="text" id="name" placeholder="Student Name">
+
+        <input type="text" id="registerNo" placeholder="Register Number">
+
+        <select id="department">
+            <option value="">Select Department</option>
+            <option>CSE</option>
+            <option>IT</option>
+            <option>ECE</option>
+        </select>
+
+        <br>
+
+        <button onclick="addStudent()">Add Student</button>
+
+        <button onclick="clearAll()">Clear All</button>
+
+        <ul id="studentList"></ul>
+
+    </div>
+
+    <script>
+
+        function addStudent() {
+
+            let name =
+                document.getElementById("name").value;
+
+            let registerNo =
+                document.getElementById("registerNo").value;
+
+            let department =
+                document.getElementById("department").value;
+
+            if (name === "" || registerNo === "" || department === "") {
+                alert("Please fill all details");
+                return;
+            }
+
+            let list =
+                document.getElementById("studentList");
+
+            // createElement()
+            let student =
+                document.createElement("li");
+
+            student.textContent =
+                "Name: " + name +
+                " | Register No: " + registerNo +
+                " | Department: " + department;
+
+            // Create Remove button
+            let removeButton =
+                document.createElement("button");
+
+            removeButton.textContent = "Remove";
+
+            removeButton.classList.add("remove");
+
+            // addEventListener()
+            removeButton.addEventListener("click", function () {
+
+                // parentElement and remove()
+                this.parentElement.remove();
+
+            });
+
+            // appendChild()
+            student.appendChild(removeButton);
+
+            list.appendChild(student);
+
+            // Clear input fields
+            document.getElementById("name").value = "";
+            document.getElementById("registerNo").value = "";
+            document.getElementById("department").value = "";
+        }
+
+
+        function clearAll() {
+
+            let list =
+                document.getElementById("studentList");
+
+            // Using children
+            while (list.children.length > 0) {
+
+                list.children[0].remove();
+
+            }
+
+        }
+
+    </script>
+
+</body>
+</html>

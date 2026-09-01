@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Browser Information Dashboard</title>
+
+    <style>
+        body {
+            font-family: Arial;
+            background: #f2f2f2;
+            text-align: center;
+        }
+
+        .container {
+            width: 600px;
+            margin: 40px auto;
+            background: white;
+            padding: 25px;
+            border-radius: 10px;
+        }
+
+        .info {
+            text-align: left;
+            background: #eeeeee;
+            padding: 15px;
+            margin: 10px;
+            border-radius: 5px;
+        }
+
+        button {
+            padding: 10px 20px;
+            background: blue;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h2>Browser Information Dashboard</h2>
+
+        <div class="info">
+            <b>Current URL:</b>
+            <span id="url"></span>
+        </div>
+
+        <div class="info">
+            <b>Browser Language:</b>
+            <span id="language"></span>
+        </div>
+
+        <div class="info">
+            <b>Online Status:</b>
+            <span id="status"></span>
+        </div>
+
+        <div class="info">
+            <b>Screen Size:</b>
+            <span id="screen"></span>
+        </div>
+
+        <div class="info">
+            <b>Viewport Size:</b>
+            <span id="viewport"></span>
+        </div>
+
+        <div class="info">
+            <b>Scroll Position:</b>
+            <span id="scroll"></span>
+        </div>
+
+        <button onclick="showInfo()">Refresh Information</button>
+
+        <div style="height: 500px;"></div>
+
+    </div>
+
+    <script>
+
+        function showInfo() {
+
+            // Current URL
+            document.getElementById("url").textContent =
+                window.location.href;
+
+            // Browser language
+            document.getElementById("language").textContent =
+                navigator.language;
+
+            // Online / Offline status
+            if (navigator.onLine) {
+                document.getElementById("status").textContent =
+                    "Online";
+            } else {
+                document.getElementById("status").textContent =
+                    "Offline";
+            }
+
+            // Screen width and height
+            document.getElementById("screen").textContent =
+                screen.width + " x " + screen.height;
+
+            // Viewport width and height
+            document.getElementById("viewport").textContent =
+                window.innerWidth + " x " + window.innerHeight;
+
+            // Scroll position
+            document.getElementById("scroll").textContent =
+                "X: " + window.scrollX +
+                " | Y: " + window.scrollY;
+        }
+
+
+        // Update when browser window is resized
+        window.addEventListener("resize", showInfo);
+
+        // Update when page is scrolled
+        window.addEventListener("scroll", showInfo);
+
+        // Display information when page loads
+        showInfo();
+
+    </script>
+
+</body>
+</html>
