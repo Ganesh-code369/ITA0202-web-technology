@@ -1,449 +1,911 @@
-<!-- index.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Responsive University Event Registration Portal">
-    <title>UniConnect | University Event Registration Portal</title>
 
-    <!-- External CSS -->
+    <title>Saveetha Events | Student Portal</title>
+
     <link rel="stylesheet" href="style.css">
 
-    <!-- Internal CSS -->
-    <style>
-        .announcement {
-            max-width: 1120px;
-            margin: 20px auto;
-            padding: 12px 18px;
-            background: linear-gradient(90deg, #ecfdf3, #f4fff7);
-            border-left: 5px solid #198754;
-            border-radius: 8px;
-            color: #344054;
-        }
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-        .announcement strong {
-            color: #146c43;
-        }
-    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Outfit:wght@500;600;700;800&display=swap" rel="stylesheet">
 </head>
 
 <body>
 
-    <!-- ================= HEADER ================= -->
-    <header class="site-header">
-        <nav class="navbar" aria-label="Main Navigation">
+    <!-- Background Effects -->
+    <div class="orb orb-1"></div>
+    <div class="orb orb-2"></div>
+    <div class="grid-bg"></div>
 
-            <a href="#home" class="brand">
-                <span class="university-name">SAVEETHA UNIVERSITY</span>
-                <span class="portal-name">Event Registration Portal</span>
+    <!-- ================= NAVBAR ================= -->
+
+    <header class="header">
+
+        <nav class="navbar">
+
+            <a href="#home" class="logo">
+
+                <div class="logo-icon">
+                    S
+                </div>
+
+                <div>
+                    <h2>SAVEETHA</h2>
+                    <span>STUDENT EVENTS</span>
+                </div>
+
             </a>
 
+
             <ul class="nav-links">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#events">Events</a></li>
-                <li><a href="#register">Register</a></li>
-                <li><a href="#contact">Contact</a></li>
+
+                <li>
+                    <a href="#home">Home</a>
+                </li>
+
+                <li>
+                    <a href="#events">Events</a>
+                </li>
+
+                <li>
+                    <a href="#register">Register</a>
+                </li>
+
+                <li>
+                    <a href="#contact">Contact</a>
+                </li>
+
             </ul>
 
+
+            <a href="#register" class="nav-button">
+                Get Started →
+            </a>
+
         </nav>
+
     </header>
+
+
+
+    <!-- ================= HERO ================= -->
 
     <main>
 
-        <!-- ================= HERO ================= -->
         <section id="home" class="hero">
 
-            <div class="hero-content">
-                <p class="eyebrow">2026 UNIVERSITY EVENT SERIES</p>
+            <div class="hero-left">
+
+                <div class="badge">
+                    ✦ UNIVERSITY EVENT PLATFORM 2026
+                </div>
+
 
                 <h1>
                     Discover.
-                    Participate.
-                    <span>Achieve.</span>
+                    <br>
+
+                    Connect.
+                    <br>
+
+                    <span>Achieve More.</span>
                 </h1>
 
-                <p class="hero-description">
-                    Explore technical workshops, cultural programmes,
-                    placement training and sports events happening across campus.
+
+                <p class="hero-text">
+
+                    One platform for workshops, cultural events,
+                    placement programmes and sports activities.
+
+                    Discover your next opportunity and become part
+                    of something bigger.
+
                 </p>
 
-                <p class="campaign">
-                    Registration Period:
-                    <strong>August 10 – August 31, 2026</strong>
-                </p>
 
-                <a href="#register" class="cta-button">
-                    Register Now
-                </a>
+                <div class="hero-buttons">
+
+                    <a href="#events" class="primary-btn">
+                        Explore Events
+                        <span>→</span>
+                    </a>
+
+
+                    <a href="#register" class="secondary-btn">
+                        Register Now
+                    </a>
+
+                </div>
+
+
+                <!-- Stats -->
+
+                <div class="stats">
+
+                    <div>
+                        <h3>50+</h3>
+                        <p>Events</p>
+                    </div>
+
+
+                    <div>
+                        <h3>10K+</h3>
+                        <p>Students</p>
+                    </div>
+
+
+                    <div>
+                        <h3>25+</h3>
+                        <p>Departments</p>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- Hero Card -->
+
+            <div class="hero-right">
+
+                <div class="floating-card">
+
+                    <div class="card-top">
+
+                        <span class="live-dot"></span>
+
+                        <p>EVENTS LIVE NOW</p>
+
+                        <span class="notification">
+                            🔔
+                        </span>
+
+                    </div>
+
+
+                    <div class="featured-event">
+
+                        <div class="event-emoji">
+                            🤖
+                        </div>
+
+                        <div>
+
+                            <p class="small-title">
+                                FEATURED EVENT
+                            </p>
+
+                            <h2>
+                                AI & Innovation
+                                <br>
+                                Summit 2026
+                            </h2>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="event-info">
+
+                        <div>
+                            <span>📅</span>
+                            August 18, 2026
+                        </div>
+
+                        <div>
+                            <span>📍</span>
+                            Saveetha Campus
+                        </div>
+
+                    </div>
+
+
+                    <div class="card-footer">
+
+                        <div class="avatars">
+                            <span>G</span>
+                            <span>A</span>
+                            <span>R</span>
+                            <span>+</span>
+                        </div>
+
+                        <p>
+                            500+ Students Joined
+                        </p>
+
+                    </div>
+
+                </div>
+
             </div>
 
         </section>
 
-        <!-- ================= ANNOUNCEMENT ================= -->
-        <section class="announcement" aria-label="Important Announcement">
-            <strong>Important:</strong>
-            Students must carry their university ID card when attending registered events.
+
+
+        <!-- ================= MARQUEE ================= -->
+
+        <section class="announcement">
+
+            <div class="announcement-track">
+
+                <span>🚀 AI WORKSHOP</span>
+                <span>🎭 CULTURAL FEST</span>
+                <span>🎯 PLACEMENT TRAINING</span>
+                <span>🏆 SPORTS MEET</span>
+                <span>💡 HACKATHON</span>
+
+            </div>
+
         </section>
+
+
 
         <!-- ================= EVENTS ================= -->
+
         <section id="events" class="events-section">
 
-            <div class="section-heading">
-                <p class="eyebrow">EVENT CATALOGUE</p>
-                <h2>Upcoming Campus Events</h2>
-                <p>Choose an event and secure your participation.</p>
+            <div class="section-title">
+
+                <p class="section-tag">
+                    EXPLORE EVENTS
+                </p>
+
+                <h2>
+                    Something exciting
+                    <span>is waiting for you.</span>
+                </h2>
+
+                <p>
+                    Discover events designed to help you learn,
+                    connect and grow beyond the classroom.
+                </p>
+
             </div>
+
+
 
             <div class="event-grid">
 
-                <!-- Technical Event -->
+
+                <!-- CARD 1 -->
+
                 <article class="event-card">
 
-                    <span class="status-badge">Open</span>
+                    <div class="event-card-header">
 
-                    <div class="event-icon" aria-hidden="true">💻</div>
+                        <div class="event-icon purple">
+                            🤖
+                        </div>
 
-                    <p class="category">TECHNICAL</p>
+                        <span class="open">
+                            ● OPEN
+                        </span>
 
-                    <h3>AI & Machine Learning Workshop</h3>
-
-                    <div class="event-details">
-                        <p><strong>📅 Date:</strong> August 18, 2026</p>
-                        <p><strong>⏰ Time:</strong> 10:00 AM – 1:00 PM</p>
-                        <p><strong>📍 Venue:</strong> Seminar Hall A</p>
                     </div>
 
-                    <p class="description">
-                        Learn artificial intelligence, machine learning
-                        fundamentals and practical model development.
+
+                    <p class="category">
+                        TECHNOLOGY
                     </p>
 
+                    <h3>
+                        AI & Machine Learning Workshop
+                    </h3>
+
+
+                    <p class="event-description">
+
+                        Explore artificial intelligence,
+                        machine learning and real-world
+                        applications.
+
+                    </p>
+
+
+                    <div class="event-meta">
+
+                        <span>📅 Aug 18</span>
+
+                        <span>⏰ 10:00 AM</span>
+
+                    </div>
+
+
                     <button
-                        type="button"
-                        class="register-btn"
+                        class="event-register"
                         data-event="AI & Machine Learning Workshop">
-                        Register for Event
+
+                        Register Now
+                        <span>→</span>
+
                     </button>
 
                 </article>
 
-                <!-- Cultural Event -->
+
+
+                <!-- CARD 2 -->
+
                 <article class="event-card">
 
-                    <span class="status-badge">Open</span>
+                    <div class="event-card-header">
 
-                    <div class="event-icon" aria-hidden="true">🎭</div>
+                        <div class="event-icon pink">
+                            🎭
+                        </div>
 
-                    <p class="category">CULTURAL</p>
+                        <span class="open">
+                            ● OPEN
+                        </span>
 
-                    <h3>Campus Cultural Fest</h3>
-
-                    <div class="event-details">
-                        <p><strong>📅 Date:</strong> August 22, 2026</p>
-                        <p><strong>⏰ Time:</strong> 4:00 PM – 8:00 PM</p>
-                        <p><strong>📍 Venue:</strong> Open Air Auditorium</p>
                     </div>
 
-                    <p class="description">
-                        Celebrate music, dance, drama and creativity with
-                        students from different departments.
+
+                    <p class="category">
+                        CULTURAL
                     </p>
 
+                    <h3>
+                        Campus Cultural Fest
+                    </h3>
+
+
+                    <p class="event-description">
+
+                        Music, dance, drama and unforgettable
+                        moments with students from every department.
+
+                    </p>
+
+
+                    <div class="event-meta">
+
+                        <span>📅 Aug 22</span>
+
+                        <span>⏰ 4:00 PM</span>
+
+                    </div>
+
+
                     <button
-                        type="button"
-                        class="register-btn"
+                        class="event-register"
                         data-event="Campus Cultural Fest">
-                        Register for Event
+
+                        Register Now
+                        <span>→</span>
+
                     </button>
 
                 </article>
 
-                <!-- Placement Event -->
+
+
+                <!-- CARD 3 -->
+
                 <article class="event-card">
 
-                    <span class="status-badge limited">Limited Seats</span>
+                    <div class="event-card-header">
 
-                    <div class="event-icon" aria-hidden="true">🎯</div>
+                        <div class="event-icon orange">
+                            🎯
+                        </div>
 
-                    <p class="category">PLACEMENT</p>
+                        <span class="limited">
+                            LIMITED
+                        </span>
 
-                    <h3>Placement Readiness Programme</h3>
-
-                    <div class="event-details">
-                        <p><strong>📅 Date:</strong> August 25, 2026</p>
-                        <p><strong>⏰ Time:</strong> 9:30 AM – 12:30 PM</p>
-                        <p><strong>📍 Venue:</strong> Placement Auditorium</p>
                     </div>
 
-                    <p class="description">
-                        Improve aptitude, communication, interview skills
-                        and technical preparation for campus placements.
+
+                    <p class="category">
+                        PLACEMENT
                     </p>
 
+                    <h3>
+                        Placement Readiness Programme
+                    </h3>
+
+
+                    <p class="event-description">
+
+                        Improve your aptitude, interview,
+                        communication and technical skills.
+
+                    </p>
+
+
+                    <div class="event-meta">
+
+                        <span>📅 Aug 25</span>
+
+                        <span>⏰ 9:30 AM</span>
+
+                    </div>
+
+
                     <button
-                        type="button"
-                        class="register-btn"
+                        class="event-register"
                         data-event="Placement Readiness Programme">
-                        Register for Event
+
+                        Register Now
+                        <span>→</span>
+
                     </button>
 
                 </article>
 
-                <!-- Sports Event -->
+
+
+                <!-- CARD 4 -->
+
                 <article class="event-card">
 
-                    <span class="status-badge">Open</span>
+                    <div class="event-card-header">
 
-                    <div class="event-icon" aria-hidden="true">🏆</div>
+                        <div class="event-icon green">
+                            🏆
+                        </div>
 
-                    <p class="category">SPORTS</p>
+                        <span class="open">
+                            ● OPEN
+                        </span>
 
-                    <h3>Inter-Department Sports Meet</h3>
-
-                    <div class="event-details">
-                        <p><strong>📅 Date:</strong> August 28, 2026</p>
-                        <p><strong>⏰ Time:</strong> 8:00 AM – 5:00 PM</p>
-                        <p><strong>📍 Venue:</strong> University Sports Ground</p>
                     </div>
 
-                    <p class="description">
-                        Compete with students across departments in cricket,
-                        football, volleyball and athletics.
+
+                    <p class="category">
+                        SPORTS
                     </p>
 
+                    <h3>
+                        Inter Department Sports Meet
+                    </h3>
+
+
+                    <p class="event-description">
+
+                        Compete, challenge yourself and represent
+                        your department on the university stage.
+
+                    </p>
+
+
+                    <div class="event-meta">
+
+                        <span>📅 Aug 28</span>
+
+                        <span>⏰ 8:00 AM</span>
+
+                    </div>
+
+
                     <button
-                        type="button"
-                        class="register-btn"
-                        data-event="Inter-Department Sports Meet">
-                        Register for Event
+                        class="event-register"
+                        data-event="Inter Department Sports Meet">
+
+                        Register Now
+                        <span>→</span>
+
                     </button>
 
                 </article>
+
 
             </div>
 
         </section>
+
+
 
         <!-- ================= REGISTRATION ================= -->
+
         <section id="register" class="registration-section">
 
-            <div class="form-container">
+            <div class="registration-wrapper">
 
-                <div class="form-intro">
-                    <p class="eyebrow">JOIN AN EVENT</p>
-                    <h2>Student Registration</h2>
-                    <p>
-                        Fill in your details to register for your preferred
-                        university event.
+
+                <!-- LEFT -->
+
+                <div class="registration-info">
+
+                    <p class="section-tag">
+                        JOIN THE EXPERIENCE
                     </p>
+
+
+                    <h2>
+                        Your next
+                        <span>experience</span>
+                        starts here.
+                    </h2>
+
+
+                    <p>
+
+                        Complete the registration form and
+                        secure your spot for your favourite
+                        university event.
+
+                    </p>
+
+
+                    <div class="benefits">
+
+                        <div>
+
+                            <span>✓</span>
+
+                            <div>
+
+                                <h4>Instant Registration</h4>
+
+                                <p>
+                                    Quick and simple registration process.
+                                </p>
+
+                            </div>
+
+                        </div>
+
+
+                        <div>
+
+                            <span>✓</span>
+
+                            <div>
+
+                                <h4>University Events</h4>
+
+                                <p>
+                                    Workshops, cultural and sports events.
+                                </p>
+
+                            </div>
+
+                        </div>
+
+
+                        <div>
+
+                            <span>✓</span>
+
+                            <div>
+
+                                <h4>Build Your Network</h4>
+
+                                <p>
+                                    Connect with students and experts.
+                                </p>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
                 </div>
 
-                <form id="registrationForm" class="registration-form">
 
-                    <div class="form-group">
-                        <label for="studentName">Student Name</label>
-                        <input
-                            type="text"
-                            id="studentName"
-                            name="studentName"
-                            placeholder="Enter your full name"
-                            autocomplete="name"
-                            required>
-                    </div>
 
-                    <div class="form-group">
-                        <label for="registerNumber">Register Number</label>
-                        <input
-                            type="text"
-                            id="registerNumber"
-                            name="registerNumber"
-                            placeholder="e.g. 2026CS001"
-                            required>
-                    </div>
+                <!-- FORM -->
 
-                    <div class="form-group">
-                        <label for="department">Department</label>
+                <div class="form-card">
 
-                        <select
-                            id="department"
-                            name="department"
-                            required>
+                    <div class="form-header">
 
-                            <option value="">Select department</option>
-                            <option value="CSE">Computer Science & Engineering</option>
-                            <option value="IT">Information Technology</option>
-                            <option value="ECE">Electronics & Communication</option>
-                            <option value="EEE">Electrical & Electronics</option>
-                            <option value="MECH">Mechanical Engineering</option>
-                            <option value="AIDS">Artificial Intelligence & Data Science</option>
+                        <h2>Student Registration</h2>
 
-                        </select>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="email">Email Address</label>
-
-                        <input
-                            type="email"
-                            id="email"
-                            name="email"
-                            placeholder="student@university.edu"
-                            autocomplete="email"
-                            required>
-                    </div>
-
-                    <div class="form-group full-width">
-                        <label for="event">Select Event</label>
-
-                        <select
-                            id="event"
-                            name="event"
-                            required>
-
-                            <option value="">Choose an event</option>
-                            <option value="AI & Machine Learning Workshop">
-                                AI & Machine Learning Workshop
-                            </option>
-                            <option value="Campus Cultural Fest">
-                                Campus Cultural Fest
-                            </option>
-                            <option value="Placement Readiness Programme">
-                                Placement Readiness Programme
-                            </option>
-                            <option value="Inter-Department Sports Meet">
-                                Inter-Department Sports Meet
-                            </option>
-
-                        </select>
-                    </div>
-
-                    <div class="form-note full-width">
-                        <!-- Inline CSS demonstration -->
-                        <p style="font-size: 0.85rem; color: #667085;">
-                            * Please verify all details before submitting.
+                        <p>
+                            Fill in your details below.
                         </p>
+
                     </div>
 
-                    <button
-                        type="submit"
-                        class="submit-button full-width">
-                        Submit Registration
-                    </button>
 
-                    <p
-                        id="successMessage"
-                        class="success-message full-width"
-                        role="status"
-                        aria-live="polite">
-                    </p>
+                    <form id="registrationForm">
 
-                </form>
+
+                        <div class="input-group">
+
+                            <label>
+                                Student Name
+                            </label>
+
+                            <input
+                                type="text"
+                                id="studentName"
+                                placeholder="Enter your full name"
+                                required>
+
+                        </div>
+
+
+
+                        <div class="input-group">
+
+                            <label>
+                                Register Number
+                            </label>
+
+                            <input
+                                type="text"
+                                id="registerNumber"
+                                placeholder="192421213"
+                                required>
+
+                        </div>
+
+
+
+                        <div class="input-group">
+
+                            <label>
+                                Email Address
+                            </label>
+
+                            <input
+                                type="email"
+                                id="email"
+                                placeholder="yourname.simats@saveetha.com"
+                                required>
+
+                        </div>
+
+
+
+                        <div class="input-group">
+
+                            <label>
+                                Department
+                            </label>
+
+                            <select id="department" required>
+
+                                <option value="">
+                                    Select Department
+                                </option>
+
+                                <option>
+                                    Information Technology
+                                </option>
+
+                                <option>
+                                    Computer Science Engineering
+                                </option>
+
+                                <option>
+                                    Artificial Intelligence & Data Science
+                                </option>
+
+                                <option>
+                                    Electronics & Communication Engineering
+                                </option>
+
+                                <option>
+                                    Mechanical Engineering
+                                </option>
+
+                            </select>
+
+                        </div>
+
+
+
+                        <div class="input-group full">
+
+                            <label>
+                                Select Event
+                            </label>
+
+                            <select id="event" required>
+
+                                <option value="">
+                                    Choose your event
+                                </option>
+
+                                <option>
+                                    AI & Machine Learning Workshop
+                                </option>
+
+                                <option>
+                                    Campus Cultural Fest
+                                </option>
+
+                                <option>
+                                    Placement Readiness Programme
+                                </option>
+
+                                <option>
+                                    Inter Department Sports Meet
+                                </option>
+
+                            </select>
+
+                        </div>
+
+
+
+                        <button type="submit" class="submit-btn">
+
+                            Complete Registration
+
+                            <span>→</span>
+
+                        </button>
+
+
+                        <div id="successMessage"></div>
+
+                    </form>
+
+                </div>
 
             </div>
 
         </section>
+
 
     </main>
 
-    <!-- ================= FIXED HELP BUTTON ================= -->
-    <a
-        href="#contact"
-        class="help-button"
-        aria-label="Go to contact section">
-        ?
-    </a>
+
 
     <!-- ================= FOOTER ================= -->
+
     <footer id="contact">
 
-        <div class="footer-content">
+        <div class="footer-grid">
 
-            <div class="footer-column">
-                <h3>UniConnect</h3>
+            <div>
+
+                <div class="footer-logo">
+
+                    <div class="logo-icon">
+                        S
+                    </div>
+
+                    <h2>
+                        SAVEETHA
+                    </h2>
+
+                </div>
+
 
                 <p>
-                    University Event Registration Portal
+
+                    Discover events. Build skills.
+                    Create unforgettable experiences.
+
                 </p>
 
-                <p>
-                    Discover events. Build skills. Create memories.
-                </p>
             </div>
 
-            <div class="footer-column">
-                <h3>Contact</h3>
 
-                <p>
-                    Email:
-                    <a href="mailto:events@university.edu">
-                        events@university.edu
-                    </a>
-                </p>
+            <div>
 
-                <p>
-                    Phone:
-                    <a href="tel:+914412345678">
-                        +91 44 1234 5678
-                    </a>
-                </p>
+                <h3>
+                    Quick Links
+                </h3>
+
+                <a href="#home">Home</a>
+
+                <a href="#events">Events</a>
+
+                <a href="#register">Register</a>
+
             </div>
 
-            <div class="footer-column">
-                <h3>Useful Links</h3>
 
-                <ul>
-                    <li><a href="#home">Home</a></li>
-                    <li><a href="#events">Events</a></li>
-                    <li><a href="#register">Register</a></li>
-                </ul>
+            <div>
+
+                <h3>
+                    Contact
+                </h3>
+
+                <p>
+                    events@saveetha.com
+                </p>
+
+                <p>
+                    +91 44 1234 5678
+                </p>
+
             </div>
 
         </div>
 
+
         <div class="copyright">
-            © 2026 Saveetha University. All Rights Reserved.
+
+            © 2026 Saveetha University.
+            Designed for the future.
+
         </div>
 
     </footer>
 
-    <!-- ================= JAVASCRIPT ================= -->
-    <script>
-        const form = document.getElementById("registrationForm");
-        const eventSelect = document.getElementById("event");
-        const successMessage = document.getElementById("successMessage");
 
-        const eventButtons = document.querySelectorAll(".register-btn");
+
+    <!-- ================= JAVASCRIPT ================= -->
+
+    <script>
+
+        const eventButtons =
+            document.querySelectorAll(".event-register");
+
+        const eventSelect =
+            document.getElementById("event");
+
 
         eventButtons.forEach(button => {
-            button.addEventListener("click", () => {
-                const selectedEvent = button.dataset.event;
 
-                eventSelect.value = selectedEvent;
+            button.addEventListener("click", () => {
+
+                eventSelect.value =
+                    button.dataset.event;
 
                 document
                     .getElementById("register")
                     .scrollIntoView({
                         behavior: "smooth"
                     });
+
             });
+
         });
 
-        form.addEventListener("submit", function (event) {
+
+
+        const form =
+            document.getElementById("registrationForm");
+
+
+        const successMessage =
+            document.getElementById("successMessage");
+
+
+        form.addEventListener("submit", function(event) {
+
             event.preventDefault();
 
-            const studentName =
-                document.getElementById("studentName").value.trim();
 
-            const selectedEvent = eventSelect.value;
+            const name =
+                document
+                    .getElementById("studentName")
+                    .value;
 
-            successMessage.textContent =
-                `Thank you, ${studentName}! Your registration for ${selectedEvent} has been submitted successfully.`;
+
+            const selectedEvent =
+                eventSelect.value;
+
+
+            successMessage.innerHTML =
+                `🎉 <strong>Registration Successful!</strong><br>
+                ${name}, you have successfully registered for
+                <strong>${selectedEvent}</strong>.`;
+
 
             successMessage.classList.add("show");
 
+
             form.reset();
+
+
+            setTimeout(() => {
+
+                successMessage.classList.remove("show");
+
+            }, 6000);
+
         });
+
     </script>
 
 </body>
